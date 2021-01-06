@@ -1,0 +1,10 @@
+for i,v in pairs(workspace["Alchas_Main"]:GetChildren()) do
+    if v.Name == "Barrel" then
+        if v:FindFirstChild("UpperLid") then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.UpperLid.CFrame
+            wait(0.1)
+            game.ReplicatedStorage.Remotes.RemoteEvents.checkInteract:FireServer(tostring(v.Wood.Interaction.Interact.IntName.Value))
+            wait(2.9)
+        end
+    end
+end
